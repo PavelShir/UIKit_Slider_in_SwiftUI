@@ -11,6 +11,7 @@
 		A66F433F290EC7500058EB11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F433E290EC7500058EB11 /* ContentView.swift */; };
 		A66F4341290EC7520058EB11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66F4340290EC7520058EB11 /* Assets.xcassets */; };
 		A66F4344290EC7520058EB11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66F4343290EC7520058EB11 /* Preview Assets.xcassets */; };
+		A66F434B290EC7850058EB11 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66F434A290EC7850058EB11 /* SliderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		A66F433E290EC7500058EB11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A66F4340290EC7520058EB11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A66F4343290EC7520058EB11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A66F434A290EC7850058EB11 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				A66F433C290EC7500058EB11 /* UIKit_Slider_in_SwiftUIApp.swift */,
 				A66F433E290EC7500058EB11 /* ContentView.swift */,
+				A66F434A290EC7850058EB11 /* SliderView.swift */,
 				A66F4340290EC7520058EB11 /* Assets.xcassets */,
 				A66F4342290EC7520058EB11 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A66F434B290EC7850058EB11 /* SliderView.swift in Sources */,
 				A66F433F290EC7500058EB11 /* ContentView.swift in Sources */,
 				A66F433D290EC7500058EB11 /* UIKit_Slider_in_SwiftUIApp.swift in Sources */,
 			);
