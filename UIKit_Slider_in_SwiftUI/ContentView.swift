@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @State private var randomNumber = Int.random(in: 1...100)
     @State var currentValue =
+    @State var alertPresented = false
+    @State var result = 0
     
     var body: some View {
         
@@ -19,18 +21,24 @@ struct ContentView: View {
             
             HStack {
                 Text("0")
-                SliderView()
+                SliderView(sliderValue: )
                 Text("100")
             }
             .padding()
          
             Button {
-                .alert("Good try!", isPresented: true, actions: {}) {
-                    "Нужное число \(randomNumber)"
+                checkSliderValue()
+                alertPresented.toggle()
                 }
-            } label: {
-               Text("Проверь меня!")
+                label: {
+                    Text("Проверь меня!")
             }
+            .alert("Good try!", isPresented: $alertPresented)
+                {
+                Button("Ok", action: {})
+                } message: {
+                 Text ("Ты набрал \(result) %")
+                }
             
             Button {
                 randomNumber = Int.random(in: 1...100)
@@ -41,6 +49,10 @@ struct ContentView: View {
 
         }
 
+    }
+    
+    private func checkSliderValue() -> Int {
+        result = lround(Double(currentValue/randomNumber*100))
     }
     
     private func computeScore() -> Int {

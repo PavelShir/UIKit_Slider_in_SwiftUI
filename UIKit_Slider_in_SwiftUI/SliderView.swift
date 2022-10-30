@@ -11,7 +11,7 @@ import SwiftUI
 
 struct SliderView: UIViewRepresentable {
   
-   // @Binding var sliderValue: Float
+   @Binding var sliderValue: Double
     
     func makeUIView(context: Context) -> UISlider {
         
@@ -21,7 +21,7 @@ struct SliderView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
-      //  uiView.value = sliderValue
+      sliderValue = Double(uiView.value)
     }
     
 
@@ -31,6 +31,6 @@ struct SliderView: UIViewRepresentable {
 struct SliderView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SliderView()
+        SliderView(sliderValue: .constant(0.5))
     }
 }
