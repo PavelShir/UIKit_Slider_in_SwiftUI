@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var randomNumber = Int.random(in: 1...100)
-    @Binding var currentValue: Double
+    @State var currentValue = 50.0
     @State var alertPresented = false
-    @State var result = 0
     
     var body: some View {
         
@@ -21,7 +20,7 @@ struct ContentView: View {
             
             HStack {
                 Text("0")
-                SliderView(sliderValue: $currentValue)
+                SliderView(sliderValue: $currentValue, alpha: computeScore())
                     .onChange(of: currentValue) { newValue in
                         
                     }
@@ -30,8 +29,7 @@ struct ContentView: View {
             .padding()
          
             Button {
-                checkSliderValue()
-                alertPresented.toggle()
+                alertPresented = true
                 }
                 label: {
                     Text("Проверь меня!")
@@ -40,7 +38,7 @@ struct ContentView: View {
                 {
                 Button("Ok", action: {})
                 } message: {
-                 Text ("Ты набрал \(result) %")
+                 Text ("Ты набрал \(computeScore()) %")
                 }
             
             Button {
@@ -48,15 +46,7 @@ struct ContentView: View {
             } label: {
                Text("Начать заново")
             }
-
-
         }
-
-    }
-    
-    private func checkSliderValue() -> Int {
-        result = lround(currentValue)/randomNumber*100
-        return result
     }
     
     private func computeScore() -> Int {
@@ -64,12 +54,10 @@ struct ContentView: View {
         let difference = abs(targetValue - lround(currentValue))
         return 100 - difference
     }
-    
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(currentValue: .constant(0.5))
+        ContentView()
     }
 }

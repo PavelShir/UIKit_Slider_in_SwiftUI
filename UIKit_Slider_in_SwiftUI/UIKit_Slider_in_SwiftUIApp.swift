@@ -11,7 +11,7 @@ import SwiftUI
 struct UIKit_Slider_in_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(currentValue: .constant(0.5))
+            ContentView()
         }
     }
 }
