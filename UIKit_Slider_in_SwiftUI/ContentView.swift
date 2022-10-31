@@ -22,6 +22,9 @@ struct ContentView: View {
             HStack {
                 Text("0")
                 SliderView(sliderValue: $currentValue)
+                    .onChange(of: currentValue) { newValue in
+                        
+                    }
                 Text("100")
             }
             .padding()
