@@ -10,12 +10,19 @@ import SwiftUI
 
 
 struct SliderView: UIViewRepresentable {
+    
   
    @Binding var sliderValue: Double
     
     func makeUIView(context: Context) -> UISlider {
         
         let slider = UISlider()
+        
+        slider.addTarget(
+            context.coordinator,
+            action: #selector(Coordinator.sliderValueChanged),
+            for: .valueChanged
+        )
         
         return slider
     }
@@ -24,7 +31,24 @@ struct SliderView: UIViewRepresentable {
       sliderValue = Double(uiView.value)
     }
     
+    func makeCoordinator() -> Coordinator {
+        Coordinator(sliderValue: $sliderValue)
+    }
+    
+}
 
+extension SliderView {
+    class Coordinator: NSObject {
+        @Binding var sliderValue: Double
+        
+        init(sliderValue: Binding<Double>) {
+            self._sliderValue = sliderValue
+        }
+        
+        @objc func sliderValueChanged(_ sender: UISlider) {
+            sliderValue = Double(sender.value)
+        }
+    }
 }
 
 
